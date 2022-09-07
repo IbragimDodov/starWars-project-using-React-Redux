@@ -1,0 +1,10 @@
+.text {
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  line-height: 1.7;
+  font-size: 26px;
+  text-align: center;
+  text-shadow: 0 0 2px #fff;
+  color: var(--color-yellow);
+}
