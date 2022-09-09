@@ -3,7 +3,22 @@
   --color-black: #000000;
   --color-dark-gray: #10100e;
   --color-yellow: #ffff00;
+  --color-blue: #6a83fb;
+  --color-violet: #ae72c2;
+
   --border-radius-small: 3px;
+
+  --width-max: 1200px;
+
+  --transition: .4s;
+
+  --text-shadow-yellow:
+    0 0 2px #fff,
+    0 0 40px var(--color-blue);
+
+  --theme-default-header: #cccc46;
+  --theme-default-bgimage: url(../static/bg.jpg);
+
 }
 
 
@@ -12,4 +27,22 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+  background-image: var(--theme-default-bgimage);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
+}
+
+img {
+  display: block;
+}
+
+.header__text {
+  line-height: 1.7;
+  font-size: 26px;
+  text-shadow: 0 0 2px #000;
+  color: var(--theme-default-header);
+  transition: color var(--transition);
 }

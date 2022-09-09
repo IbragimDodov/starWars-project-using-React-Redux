@@ -1,11 +1,26 @@
-import PeoplePage from '../PeoplePage/PeoplePage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import routesConfig from '../../routes/routesConfig';
+
 import styles from './App.module.css';
 
 const App = () => {
   return (
     <>
-      <h1 className={styles.header}>111111111</h1>
-      <PeoplePage/>
+      <BrowserRouter>
+      <div className={styles.wrapper}>
+        <Header/>
+        <Routes>
+          {routesConfig.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
+        </Routes>
+      </div>
+      </BrowserRouter>
     
     </>
   );
