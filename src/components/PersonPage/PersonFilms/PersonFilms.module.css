@@ -1,0 +1,41 @@
+.wrapper {
+  margin-left: 30px;
+  padding: 20px 0;
+}
+
+.list__container {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  color: var(--color-white);
+}
+
+.item__episode {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: var(--color-red);
+}
+
+.item__colon {
+  width: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.item__title {
+  color: var(--color-white);
+  text-shadow: var(--text-shadow-yellow);
+}
+
+@media screen and (max-width: 1020px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+  }
+}
