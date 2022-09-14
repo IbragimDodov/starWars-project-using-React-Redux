@@ -18,6 +18,7 @@ const PersonFilms = React.lazy(() => import('../../components/PersonPage/PersonF
 
 function PersonPage({setErrorApi}) {
   const {id} = useParams();
+  const [personId, setPersonId] = useState(null)
   const [personInfo, setPersonInfo] = useState(null);
   const [personName, setPersonName] = useState(null);
   const [personPhoto, setPersonPhoto] = useState(null);
@@ -28,6 +29,8 @@ function PersonPage({setErrorApi}) {
     (async () => {
       const res = await getApiResource(`${API_PERSON}/${id}/`);
       
+      setPersonId(id);
+
       if (res) {
         setPersonInfo([
           {title: 'Height', data: res.height},
@@ -61,7 +64,11 @@ function PersonPage({setErrorApi}) {
 
 
         <div className={styles.container}>
-          <PersonPhoto personPhoto={personPhoto} personName={personName}/>
+          <PersonPhoto
+            personPhoto={personPhoto}
+            personName={personName}
+            personId={personId}
+          />
 
           {personName && <PersonInfo personInfo={personInfo}/>}
 
