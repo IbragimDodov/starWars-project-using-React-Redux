@@ -1,5 +1,6 @@
 import React, {useEffect, useState, Suspense} from 'react'
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 
 
@@ -18,16 +19,21 @@ const PersonFilms = React.lazy(() => import('../../components/PersonPage/PersonF
 
 function PersonPage({setErrorApi}) {
   const {id} = useParams();
-  const [personId, setPersonId] = useState(null)
+  const [personId, setPersonId] = useState(null);
   const [personInfo, setPersonInfo] = useState(null);
   const [personName, setPersonName] = useState(null);
   const [personPhoto, setPersonPhoto] = useState(null);
   const [personFilms, setPersonFilms] = useState(null);
+  const [personFavorite, setPersonFavorite] = useState(false);
+
+  const storeDate = useSelector(state => state.favoriteReducer);
   
   useEffect(() => {
     
     (async () => {
       const res = await getApiResource(`${API_PERSON}/${id}/`);
+
+      storeDate[id] ? setPersonFavorite(true) : setPersonFavorite(false);
       
       setPersonId(id);
 
@@ -68,6 +74,8 @@ function PersonPage({setErrorApi}) {
             personPhoto={personPhoto}
             personName={personName}
             personId={personId}
+            personFavorite={personFavorite}
+            setPersonFavorite={setPersonFavorite}
           />
 
           {personName && <PersonInfo personInfo={personInfo}/>}
