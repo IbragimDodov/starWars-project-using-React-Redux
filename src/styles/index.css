@@ -46,6 +46,14 @@
 
 }
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
 
 body {
   background-color: var(--color-dark-gray);
