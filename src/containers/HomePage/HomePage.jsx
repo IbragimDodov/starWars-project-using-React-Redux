@@ -1,5 +1,5 @@
 import React from 'react'
-import ChooseSide from '../../components/HomePage/ChooseSide';
+import ChooseSide from '../../components/HomePage/ChooseSide/ChooseSide';
 
 import styles from './HomePage.module.css';
 
