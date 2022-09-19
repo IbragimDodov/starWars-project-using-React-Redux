@@ -1,6 +1,7 @@
 {
   "name": "react-star-wars",
   "version": "0.1.0",
+  "homepage": "https://ibragimdodov.github.io/starWars-project-using-React-Redux/",
   "private": true,
   "dependencies": {
     "classnames": "^2.3.1",
