@@ -8,3 +8,11 @@
   text-shadow: 0 0 2px #fff;
   color: var(--color-yellow);
 }
+
+.video {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: var(--text-shadow-white);
+}
